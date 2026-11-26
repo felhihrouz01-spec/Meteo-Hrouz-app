@@ -1,20 +1,27 @@
 {
-  "name": "MeteoHrouz",
+  "name": "MeteoHrouz - الطقس والإرشاد الفلاحي",
   "short_name": "MeteoHrouz",
-  "start_url": "./index.html",
+  "description": "تطبيق الطقس والإرشاد الفلاحي ومواقيت الصلاة بالرضاع الشرقية",
+  "start_url": "/Meteo-Hrouz-app/index.html",
+  "scope": "/Meteo-Hrouz-app/",
   "display": "standalone",
-  "background_color": "#f4f6f5",
-  "theme_color": "#2E7D32",
+  "orientation": "portrait",
+  "background_color": "#0d1b2a",
+  "theme_color": "#4caf50",
+  "lang": "ar",
+  "dir": "rtl",
   "icons": [
     {
-      "src": "./assets/icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "src": "https://flaticon.com",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "./assets/icon-512.png",
+      "src": "https://flaticon.com",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
