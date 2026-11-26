@@ -13,13 +13,13 @@
   "dir": "rtl",
   "icons": [
     {
-      "src": "https://githubusercontent.com",
+      "src": "https://pwabuilder.com",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://githubusercontent.com",
+      "src": "https://pwabuilder.com",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
