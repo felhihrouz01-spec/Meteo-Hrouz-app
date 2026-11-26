@@ -14,19 +14,13 @@
   "icons": [
     {
       "src": "https://githubusercontent.com",
-      "sizes": "72x72",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
       "src": "https://githubusercontent.com",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "https://githubassets.com",
-      "sizes": "560x560",
+      "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     }
