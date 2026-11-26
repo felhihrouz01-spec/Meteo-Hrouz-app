@@ -1,4 +1,5 @@
 {
+  "id": "/Meteo-Hrouz-app/",
   "name": "MeteoHrouz - الطقس والإرشاد الفلاحي",
   "short_name": "MeteoHrouz",
   "description": "تطبيق الطقس والإرشاد الفلاحي ومواقيت الصلاة بالرضاع الشرقية",
@@ -12,16 +13,22 @@
   "dir": "rtl",
   "icons": [
     {
-      "src": "https://flaticon.com",
-      "sizes": "512x512",
+      "src": "https://githubusercontent.com",
+      "sizes": "72x72",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "https://flaticon.com",
-      "sizes": "512x512",
+      "src": "https://githubusercontent.com",
+      "sizes": "96x96",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "https://githubassets.com",
+      "sizes": "560x560",
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
