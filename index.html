@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" translate="no">
 <head>
   <meta charset="UTF-8">
+  <meta name="google" content="notranslate">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>MeteoHrouz - الطقس والإرشاد الفلاحي</title>
   <link rel="manifest" href="manifest.json">
@@ -10,7 +11,7 @@
   <style>
     :root {
       --bg-dark: #112417;
-      --card-bg: rgba(24, 48, 32, 0.85);
+      --card-bg: rgba(24, 48, 32, 0.88);
       --accent-green: #4caf50;
       --accent-light: #81c784;
       --text-main: #ffffff;
@@ -25,10 +26,9 @@
       overflow-x: hidden;
     }
 
-    /* القسم العلوي بالخلفية الفلاحية */
     .hero-section {
       position: relative;
-      background: linear-gradient(to bottom, rgba(17, 36, 23, 0.45) 0%, rgba(17, 36, 23, 0.85) 75%, var(--bg-dark) 100%),
+      background: linear-gradient(to bottom, rgba(17, 36, 23, 0.35) 0%, rgba(17, 36, 23, 0.85) 78%, var(--bg-dark) 100%),
                   url('https://unsplash.com') center/cover no-repeat;
       padding: 15px 15px 10px 15px;
       text-align: center;
@@ -44,24 +44,23 @@
       font-size: 20px;
       font-weight: bold;
       color: #69f0ae;
-      letter-spacing: 0.5px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
     }
     .lang-pills {
-      background: rgba(0, 0, 0, 0.45);
-      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255,255,255,0.25);
       border-radius: 20px;
-      padding: 4px 10px;
+      padding: 4px 8px;
       display: flex;
-      gap: 6px;
+      gap: 4px;
       font-size: 12px;
     }
     .lang-btn {
       background: none;
       border: none;
-      color: #ddd;
+      color: #eee;
       cursor: pointer;
-      padding: 2px 6px;
+      padding: 3px 8px;
       border-radius: 12px;
       font-weight: bold;
     }
@@ -74,10 +73,9 @@
       font-size: 18px;
       font-weight: bold;
       margin-bottom: 10px;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.8);
     }
 
-    /* شريط التنبيهات الأحمر/البرتقالي */
     .alert-banner {
       background: rgba(168, 32, 26, 0.92);
       border: 1px solid #ff8a80;
@@ -87,7 +85,7 @@
       font-size: 13px;
       font-weight: bold;
       margin: 0 auto 12px auto;
-      max-width: 95%;
+      max-width: 96%;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       display: flex;
       align-items: center;
@@ -99,13 +97,14 @@
       font-size: 68px;
       font-weight: 800;
       line-height: 1;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      text-shadow: 0 4px 12px rgba(0,0,0,0.7);
       margin: 5px 0;
     }
     .weather-status {
       font-size: 20px;
       font-weight: 600;
       margin-bottom: 4px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.6);
     }
     .min-max {
       font-size: 15px;
@@ -114,11 +113,11 @@
       font-weight: bold;
     }
 
-    /* شريط مواقيت الصلاة المتحرك كالقنوات التلفزية */
+    /* شريط مواقيت الصلاة المتحرك من اليسار لليمين */
     .prayer-ticker-wrapper {
-      background: rgba(13, 28, 18, 0.95);
-      border-top: 1px solid rgba(129, 199, 132, 0.3);
-      border-bottom: 1px solid rgba(129, 199, 132, 0.3);
+      background: rgba(13, 28, 18, 0.96);
+      border-top: 1px solid rgba(129, 199, 132, 0.35);
+      border-bottom: 1px solid rgba(129, 199, 132, 0.35);
       display: flex;
       align-items: center;
       overflow: hidden;
@@ -144,23 +143,22 @@
       overflow: hidden;
       white-space: nowrap;
       position: relative;
+      direction: ltr;
     }
-    /* حركة الشريط من اليسار لليمين */
     .ticker-content {
       display: inline-block;
       white-space: nowrap;
-      padding-left: 100%;
-      animation: tickerLTR 22s linear infinite;
+      animation: tickerLTR 24s linear infinite;
       font-size: 14px;
       font-weight: 600;
       color: #e8f5e9;
+      direction: rtl;
     }
     @keyframes tickerLTR {
       0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+      100% { transform: translateX(100vw); }
     }
 
-    /* محتوى التبويبات */
     .tab-content { display: none; padding: 12px 15px; animation: fadeIn 0.3s ease; }
     .tab-content.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
@@ -175,7 +173,6 @@
       gap: 8px;
     }
 
-    /* بطاقة حالة الحقل والمناخ */
     .field-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -192,7 +189,6 @@
     .field-box span { font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 4px; }
     .field-box b { font-size: 17px; color: #fff; }
 
-    /* بطاقة الإرشاد الفلاحي والكاميرا الذكية */
     .agri-card {
       background: var(--card-bg);
       border: 1px solid rgba(129, 199, 132, 0.25);
@@ -237,7 +233,6 @@
     .smart-cam-box i { font-size: 28px; margin-bottom: 8px; color: #fff; }
     .smart-cam-box span { font-size: 12px; font-weight: bold; line-height: 1.3; }
 
-    /* توقعات الأسبوع المفصلة */
     .forecast-list { display: flex; flex-direction: column; gap: 8px; }
     .day-row {
       background: var(--card-bg);
@@ -251,7 +246,6 @@
     }
     .day-metrics { display: flex; gap: 10px; font-size: 11px; color: var(--text-muted); }
 
-    /* الرادار وطبيب النباتات */
     .radar-frame { width: 100%; height: 65vh; border-radius: 14px; border: none; }
     .search-row { display: flex; gap: 6px; margin-bottom: 10px; }
     .search-row input {
@@ -263,7 +257,6 @@
       border: none; border-radius: 8px; font-weight: bold; cursor: pointer;
     }
 
-    /* شريط التنقل السفلي */
     .bottom-nav {
       position: fixed; bottom: 0; left: 0; width: 100%;
       background: #0d1f14; border-top: 1px solid rgba(129, 199, 132, 0.2);
@@ -277,9 +270,8 @@
     .nav-btn i { font-size: 19px; margin-bottom: 4px; }
   </style>
 </head>
-<body>
+<body class="notranslate">
 
-  <!-- الواجهة الرئيسية -->
   <div id="home" class="tab-content active" style="padding: 0;">
     <div class="hero-section">
       <div class="top-bar">
@@ -302,7 +294,6 @@
       <div class="weather-status" id="weather-desc">جاري التحميل...</div>
       <div class="min-max" id="temp-range">--°C ↑ / --°C ↓</div>
 
-      <!-- شريط مواقيت الصلاة المتحرك من اليسار لليمين -->
       <div class="prayer-ticker-wrapper">
         <div class="ticker-label" id="lbl-prayer">🕌 مواقيت الصلاة</div>
         <div class="ticker-track">
@@ -321,3 +312,15 @@
           <b id="soil-temp">--°C</b>
         </div>
         <div class="field-box">
+          <span id="lbl-et0">التبخر المرجعي (ET0)</span>
+          <b id="et0-val">-- مم</b>
+        </div>
+        <div class="field-box">
+          <span id="lbl-wind">💨 سرعة الرياح</span>
+          <b id="wind-val">-- كم/س</b>
+        </div>
+        <div class="field-box">
+          <span id="lbl-hum">💧 الرطوبة النسبية</span>
+          <b id="hum-val">--%</b>
+        </div>
+      </div>
