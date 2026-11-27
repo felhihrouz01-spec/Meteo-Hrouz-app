@@ -99,6 +99,7 @@
       line-height: 1;
       text-shadow: 0 4px 12px rgba(0,0,0,0.7);
       margin: 5px 0;
+      direction: ltr;
     }
     .weather-status {
       font-size: 20px;
@@ -111,9 +112,9 @@
       color: var(--text-muted);
       margin-bottom: 15px;
       font-weight: bold;
+      direction: ltr;
     }
 
-    /* شريط مواقيت الصلاة المتحرك من اليسار لليمين */
     .prayer-ticker-wrapper {
       background: rgba(13, 28, 18, 0.96);
       border-top: 1px solid rgba(129, 199, 132, 0.35);
@@ -187,7 +188,7 @@
       text-align: center;
     }
     .field-box span { font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 4px; }
-    .field-box b { font-size: 17px; color: #fff; }
+    .field-box b { font-size: 17px; color: #fff; direction: ltr; display: inline-block; }
 
     .agri-card {
       background: var(--card-bg);
@@ -313,14 +314,11 @@
         </div>
         <div class="field-box">
           <span id="lbl-et0">التبخر المرجعي (ET0)</span>
-          <b id="et0-val">-- مم</b>
+          <b id="et0-val">-- mm</b>
         </div>
         <div class="field-box">
           <span id="lbl-wind">💨 سرعة الرياح</span>
-          <b id="wind-val">-- كم/س</b>
+          <b id="wind-val">-- km/h</b>
         </div>
         <div class="field-box">
           <span id="lbl-hum">💧 الرطوبة النسبية</span>
-          <b id="hum-val">--%</b>
-        </div>
-      </div>
